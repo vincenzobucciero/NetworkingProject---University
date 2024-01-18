@@ -64,9 +64,15 @@ Ensure you have the following software installed:
    ```
    gcc student.c -o student
    ```
+   ```
+   ./student
+   ```
 3. Compile the UniversityServer module and run:
    ```
    gcc university_server.c -o university_server
+   ```
+   ```
+   ./university_server
    ```
 
 Replace `secretariat.c`, `student.c`, and `university_server.c` with the actual names of your C source files. Additionally, include any necessary compiler flags or dependencies in the compilation commands.
@@ -86,9 +92,9 @@ We welcome contributions to the University Networking Project! Whether you've fo
 
 3. **Create a Branch:** Create a new branch for your contribution:
 
-  ```
-  git checkout -b feature/new-feature
-  ```
+    ```
+    git checkout -b feature/new-feature
+    ```
 
 4. **Make Changes:** Implement your changes or add new features. Ensure your code follows the project's coding standards.
 
