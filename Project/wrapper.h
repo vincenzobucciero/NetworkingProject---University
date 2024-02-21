@@ -1,6 +1,3 @@
-#include <sys/socket.h>
-#include <unistd.h>
-#include <arpa/inet.h>
 #ifndef WRAPPER_H
 #define WRAPPER_H
 
@@ -17,7 +14,7 @@ void Bind(int socket, const struct sockaddr *address, socklen_t address_len);
 void Listen(int socket, int backlog);
 
 // Prototipo della funzione wrapper per accettare una connessione in entrata.
-int Accept(int socket, struct sockaddr * address, socklen_t * address_len);
+int Accept(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
 
 // Prototipo della funzione per leggere dati da un file descriptor in modo completo.
 ssize_t FullRead(int fd, void *buf, size_t count);
