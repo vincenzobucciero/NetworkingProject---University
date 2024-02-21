@@ -179,7 +179,7 @@ void handle_exam_add(SOCKET client_socket){
     // Increment the number of exams and close the file
     load_exams_from_file();
 
-    write(client_socket, "\nExam added successfully!\0", 30);
+    write(client_socket, "\nExam added successfully!\0", 27);
     
     fclose(file);
 }
