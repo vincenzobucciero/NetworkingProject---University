@@ -36,7 +36,7 @@ int reservation_index = 0;
 void handle_exam_add(SOCKET);
 
 void load_exams_from_file() {
-    FILE *file = fopen("exam.txt", "r");
+    FILE *file = fopen("exams.txt", "r");
     if (file == NULL) {
         perror("Error opening exams file");
         exit(EXIT_FAILURE);
@@ -53,7 +53,7 @@ void load_exams_from_file() {
 }
 
 void load_reservation_from_file() {
-    FILE *file = fopen("reservation.txt", "r");
+    FILE *file = fopen("reservations.txt", "r");
     if (file == NULL) {
         perror("Error opening reservations file");
         exit(EXIT_FAILURE);
@@ -113,14 +113,14 @@ void handle_exam_reservation(SOCKET client_socket, const char* course, const cha
     }
     if(found == 1){
 
-        FILE *reservation_file = fopen("reservation.txt", "w");
+        FILE *reservation_file = fopen("reservations.txt", "w");
         if (reservation_file == NULL) {
             perror("\nError opening reservations file");
             return;
         }
         fclose(reservation_file);
 
-        reservation_file = fopen("reservation.txt", "a");
+        reservation_file = fopen("reservations.txt", "a");
 
         int i;    
         for(i = 0; i < reservation_index; i++) 
@@ -160,7 +160,7 @@ void handle_exam_reservation(SOCKET client_socket, const char* course, const cha
 void handle_exam_add(SOCKET client_socket){
 
     // Add exam to the file
-    FILE *file = fopen("exam.txt", "a");
+    FILE *file = fopen("exams.txt", "a");
     if (file == NULL) {
         perror("Error opening exams file");
         exit(EXIT_FAILURE);
