@@ -114,6 +114,7 @@ void handle_exam_reservation(SOCKET client_socket, const char* course, const cha
     if(found == 1){
 
         FILE *reservation_file = fopen("reservations.txt", "w");
+        
         if (reservation_file == NULL) {
             perror("\nError opening reservations file");
             return;
@@ -121,6 +122,7 @@ void handle_exam_reservation(SOCKET client_socket, const char* course, const cha
         fclose(reservation_file);
 
         reservation_file = fopen("reservations.txt", "a");
+        
 
         int i;    
         for(i = 0; i < reservation_index; i++) 
@@ -179,7 +181,7 @@ void handle_exam_add(SOCKET client_socket){
     // Increment the number of exams and close the file
     load_exams_from_file();
 
-    write(client_socket, "\nExam added successfully!\0", 30);
+    write(client_socket, "\nExam added successfully!\0", 27);
     
     fclose(file);
 }
