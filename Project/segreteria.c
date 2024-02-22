@@ -255,6 +255,8 @@ int main()
             else if (strcmp(request_type, "RESERVE_EXAM") == 0)
             {
                 bytes_read = read(client_socket, date, sizeof(date));
+                printf("Bytes: %ld\n", bytes_read);
+
                 if (!bytes_read)
                 {
                     printf("Client closed connection\n");

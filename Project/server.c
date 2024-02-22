@@ -103,6 +103,7 @@ void handle_exam_reservation(SOCKET client_socket, const char* course, const cha
     int found = 0;
     char buffer[100];
     load_reservation_from_file();
+    load_exams_from_file();
 
     for(int i = 0; i < MAX_DATE && found == 0; i++){
         if(!strcmp(course, exams[i].course)){
@@ -111,6 +112,8 @@ void handle_exam_reservation(SOCKET client_socket, const char* course, const cha
             }
         }
     }
+
+    
     if(found == 1){
 
         FILE *reservation_file = fopen("reservations.txt", "w");
