@@ -10,6 +10,7 @@ The UniversityNetworking Project implements a client/server system for universit
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [Report](#report)
 
 ## Overview
 
@@ -125,4 +126,5 @@ Remember to replace `your-username` and `feature/new-feature` with your GitHub.
 
 The University Networking Project is open-source software released under the [MIT License](LICENSE).
 
-
+## Report
+Link to the report of the project: [RelazioneBuccieroVincenzo.pdf](https://it.overleaf.com/project/65d76579c6ce323fc5701345)
