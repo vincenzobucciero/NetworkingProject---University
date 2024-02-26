@@ -11,12 +11,8 @@
 #define SERVER_IP "127.0.0.1"
 #define PORT 54321
 #define SOCKET int
-#define MAX_RETRY 3
 
 void establish_connection(SOCKET *client_socket) {
-    int attempt = 0;
-
-    while (attempt < MAX_RETRY) {
         *client_socket = socket(AF_INET, SOCK_STREAM, 0);
         struct sockaddr_in server_address = {0};
         server_address.sin_family = AF_INET;
@@ -24,23 +20,11 @@ void establish_connection(SOCKET *client_socket) {
         server_address.sin_port = htons(PORT);
 
         if (connect(*client_socket, (struct sockaddr*)&server_address, sizeof(server_address)) == -1) {
-            printf("Connection failed, retrying...\n");
+            printf("Connection failed\n");
             close(*client_socket);
-            attempt++;
-
-            if (attempt == MAX_RETRY) {
-                int random_time = rand() % 5;
-                printf("Waiting for %d seconds...\n", random_time);
-                sleep(random_time);
-
-                // Reset attempts
-                attempt = 0;
-            }
         } else {
             printf("Connection established\n");
-            break;
         }
-    }
 }
 
 void request_exam_availability(char course[]) {
