@@ -138,6 +138,7 @@ void handle_exam_reservation(SOCKET client_socket, const char* course, const cha
         else
             reservation_data[i].reservation_num++; 
 
+        
         fclose(reservation_file);
 
         snprintf(buffer,sizeof(buffer),"reservation number %d \n\n", reservation_data[i].reservation_num);
