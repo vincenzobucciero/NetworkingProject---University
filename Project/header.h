@@ -1,5 +1,5 @@
-#ifndef WRAPPER_H
-#define WRAPPER_H
+#ifndef HEADER_H
+#define HEADER_H
 
 // Prototipo della funzione wrapper per creare un socket.
 int Socket(int family, int type, int protocol);
@@ -23,4 +23,4 @@ ssize_t FullRead(int fd, void *buf, size_t count);
 //FullWrite scrive esattamente count byte s iterando opportunamente le scritture
 ssize_t FullWrite(int fd, const void *buf, size_t count);
 
-#endif // WRAPPER_H
+#endif // HEADER_H
