@@ -11,12 +11,15 @@
 #include "header.h"
 #include <sys/mman.h>
 
-#define PORT 12345
+
+// Define constants
+#define PORT 13100
 #define MAX_CONNECTIONS 5
 #define MAX_DATE 100
 #define MAX_EXAM 30
 #define SOCKET int
 
+// Define structures
 typedef struct {
     char course[50];
     char exam_date[20];
@@ -27,8 +30,9 @@ typedef struct Reservation {
     int reservation_num;
 } Reservation;
 
-Reservation *reservation_data;
 
+// Global variables
+Reservation *reservation_data;
 Exam exams[MAX_DATE];
 int num_exams = 0;
 int reservation_index = 0;
@@ -58,17 +62,18 @@ void load_reservation_from_file() {
         perror("Error opening reservations file");
         exit(EXIT_FAILURE);
     }
-    reservation_index = 0;
-    char arr[50];
+    reservation_index = 0;  // Initialize reservation index
+    char arr[50];   // Array to store reservation number temporarily
     while (fscanf(file, "%49s %19s", reservation_data[reservation_index].name, arr) == 2) {
-        reservation_data[reservation_index].reservation_num = atoi(arr);
-        reservation_index++;
-        if (reservation_index >= MAX_EXAM) {
+        // Read reservation name and number from file
+        reservation_data[reservation_index].reservation_num = atoi(arr);    // Convert string to integer
+        reservation_index++;    // Increment reservation index
+        if (reservation_index >= MAX_EXAM) {    // Break loop if maximum number of reservations reached
             break;
         }
     }
 
-    fclose(file);
+    fclose(file);   // Close file after reading
 }
 
 void add_exam(SOCKET client_socket, const char* course, const char* date) {
@@ -138,7 +143,12 @@ void handle_exam_reservation(SOCKET client_socket, const char* course, const cha
         else
             reservation_data[i].reservation_num++; 
 
-        
+        for(int j = 0; j < reservation_index; j++){
+            printf("Index %d\n", reservation_index);
+            printf("Name %s, Num %d\n", reservation_data[j].name, reservation_data[j].reservation_num);
+            fprintf(reservation_file, "%s %d\n", reservation_data[j].name, reservation_data[j].reservation_num);
+        }
+
         fclose(reservation_file);
 
         snprintf(buffer,sizeof(buffer),"reservation number %d \n\n", reservation_data[i].reservation_num);
