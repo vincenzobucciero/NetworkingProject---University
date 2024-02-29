@@ -9,7 +9,7 @@
 #include "header.h"
 
 #define SERVER_IP "127.0.0.1"
-#define SERVER_PORT 12345
+#define SERVER_PORT 13100
 #define LOCAL_PORT 54321
 #define SOCKET int
 
