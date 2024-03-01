@@ -9,7 +9,7 @@
 #include "header.h"
 
 #define SERVER_IP "127.0.0.1"
-#define PORT 13100
+#define PORT 54321
 #define SOCKET int
 
 void establish_connection(SOCKET *client_socket) {
