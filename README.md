@@ -1,7 +1,8 @@
-# NetworkingProject---University
-The UniversityNetworking Project implements a client/server system for university exam management. It involves the Secretariat in exam input and reservation, Students for access and booking, and the University Server for centralized management, ensuring efficiency and modularity. 
+# 🏫 University Networking Project
 
-## Table of Contents
+The **University Networking Project** implements a client/server system for **university exam management**. It involves the **Secretariat** for exam input and reservation, **Students** for access and booking, and the **University Server** for centralized management, ensuring efficiency and modularity.
+
+## 📑 Table of Contents
 - [Overview](#overview)
 - [Features](#features)
 - [Getting Started](#getting-started)
@@ -12,31 +13,37 @@ The UniversityNetworking Project implements a client/server system for universit
 - [License](#license)
 - [Report](#report)
 
-## Overview
+---
 
-The University Networking Project is developed to provide a seamless and organized solution for managing university exams. The system involves three main components:
+## 📚 Overview
 
-- **Secretariat:** Responsible for exam input and reservation.
-- **Students:** Have access to the system for booking exams.
-- **University Server:** Manages the centralized coordination of exams, ensuring efficiency and modularity.
+The **University Networking Project** is developed to provide a seamless and organized solution for managing university exams. The system involves three main components:
 
-## Features
+- **📋 Secretariat:** Responsible for exam input and reservation.
+- **👩‍🎓 Students:** Have access to the system for booking exams.
+- **💻 University Server:** Manages the centralized coordination of exams, ensuring efficiency and modularity.
 
-- **Secretariat Module:**
+---
+
+## 🚀 Features
+
+- **📋 Secretariat Module:**
   - Input and reservation of exams.
   - Administrative control over exam scheduling.
 
-- **Student Module:**
+- **👩‍🎓 Student Module:**
   - Access to the system for exam booking.
   - View of available exam slots.
 
-- **University Server:**
+- **💻 University Server:**
   - Centralized management of exams.
   - Efficient coordination and scheduling.
 
-## Getting Started
+---
 
-### Prerequisites
+## 🛠️ Getting Started
+
+### ⚙️ Prerequisites
 
 Ensure you have the following software installed:
 
@@ -44,14 +51,18 @@ Ensure you have the following software installed:
 - [Example Software 2](#)
 - ...
 
-### Installation
+### 📥 Installation
 
 1. Clone the repository:
 
-   ```
+   ```bash
    git clone https://github.com/vincenzobucciero/NetworkingProject-University.git
    ```
-## Usage
+2. Navigate to the project directory:
+   ```
+   cd NetworkingProject-University
+   ```
+## 🏃‍♂️ Usage
 
 1. Compile the Secretariat module and run:
 
@@ -79,7 +90,7 @@ Ensure you have the following software installed:
 Replace `secretariat.c`, `student.c`, and `university_server.c` with the actual names of your C source files. Additionally, include any necessary compiler flags or dependencies in the compilation commands.
 
 
-## Contributing
+## 🤝 Contributing
 
 We welcome contributions to the University Networking Project! Whether you've found a bug, have a feature request, or want to contribute code, here's how you can get involved:
 
@@ -122,9 +133,9 @@ By contributing to this project, you agree to abide by the Code of Conduct. Than
 
 Remember to replace `your-username` and `feature/new-feature` with your GitHub.
 
-## License
+## 👮‍♂️ License
 
 The University Networking Project is open-source software released under the [MIT License](LICENSE).
 
-## Report
+## 📰 Report
 Link to the report of the project: [RelazioneBuccieroVincenzo.pdf](https://it.overleaf.com/project/65d76579c6ce323fc5701345)
